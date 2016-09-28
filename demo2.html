@@ -25,13 +25,14 @@
 			createjs.Tween.get(circle, {loop:true})
 			.to({x:window.innerWidth, y:window.innerHeight}, 3000);
 			stage.addChild(circle);
+			createjs.Ticker.setFPS(400);
 			createjs.Ticker.addEventListener("tick",tick);
 				
 		}
 		
 		function tick() {
 			stage.update();
-			console.log("TICK!!!");
+			console.log(createjs.Ticker.getMeasuredFPS());
 			
 		}
 	</script>
